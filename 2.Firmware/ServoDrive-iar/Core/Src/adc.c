@@ -21,6 +21,7 @@
 #include "adc.h"
 
 /* USER CODE BEGIN 0 */
+uint16_t adcData[8];
 
 /* USER CODE END 0 */
 
@@ -114,7 +115,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     __HAL_LINKDMA(adcHandle,DMA_Handle,hdma_adc);
 
     /* ADC1 interrupt Init */
-    HAL_NVIC_SetPriority(ADC1_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(ADC1_IRQn, 1, 0);
     HAL_NVIC_EnableIRQ(ADC1_IRQn);
   /* USER CODE BEGIN ADC1_MspInit 1 */
 
